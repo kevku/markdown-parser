@@ -21,19 +21,86 @@ public class MarkdownParseTest {
         Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
-        System.out.print(links.get(0));
 	    assertEquals("https://something.com", links.get(0));
         assertEquals("some-thing.html", links.get(1));
     }
     @Test
-    public void checkLinkTest2() throws IOException, NoSuchFileException{
-        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file2.md");
+    public void checkMyLinkTest2() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\my-test-file2.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
         ArrayList<String> expected = new ArrayList<String>();
         expected.add("https://www.google.com/");
         expected.add("https://canvas.ucsd.edu/");
         expected.add("https://www.youtube.com/");
+	    assertEquals(expected, links);
+    }
+
+    @Test
+    public void checkLinkTest2() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("https://something.com");
+        expected.add("some-page.html");
+	    assertEquals(expected, links);
+    }
+
+    @Test
+    public void checkLinkTest3() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+	    assertEquals(expected, links);
+    }
+
+    @Test
+    public void checkLinkTest4() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file4.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+	    assertEquals(expected, links);
+    }
+
+    @Test
+    public void checkLinkTest5() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file5.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("page.com");
+	    assertEquals(expected, links);
+    }
+
+    @Test
+    public void checkLinkTest6() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file6.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("page.com");
+	    assertEquals(expected, links);
+    }
+
+    @Test
+    public void checkLinkTest7() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file7.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+	    assertEquals(expected, links);
+    }
+
+    @Test
+    public void checkLinkTest8() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file8.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("a link on the first line");
 	    assertEquals(expected, links);
     }
 }
