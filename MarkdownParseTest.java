@@ -25,4 +25,15 @@ public class MarkdownParseTest {
 	    assertEquals("https://something.com", links.get(0));
         assertEquals("some-thing.html", links.get(1));
     }
+    @Test
+    public void checkLinkTest2() throws IOException, NoSuchFileException{
+        Path fileName = Path.of("C:\\Users\\kevin\\Documents\\GitHub\\markdown-parser\\test-file2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("https://www.google.com/");
+        expected.add("https://canvas.ucsd.edu/");
+        expected.add("https://www.youtube.com/");
+	    assertEquals(expected, links);
+    }
 }
